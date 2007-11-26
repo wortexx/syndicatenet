@@ -33,7 +33,7 @@ namespace SyndicateNet.Elements.Nodes
     /// <summary>
     /// 
     /// </summary>
-    class Transition
+    class Transition : Node
     {
     }
 }
