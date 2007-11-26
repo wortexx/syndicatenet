@@ -87,6 +87,44 @@ namespace SyndicateNet.Marking
         /// <param name="cap1"></param>
         /// <param name="cap2"></param>
         /// <returns></returns>
+        public static bool operator <(Capacity cap1, long cap2)
+        {
+            if (cap1.capacity == 0)
+                return false;
+            else
+            {
+                if (cap2 == 0)
+                    return true;
+                else
+                    return (cap1.capacity < cap2);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator <(long cap1, Capacity cap2)
+        {
+            if (cap1 == 0)
+                return false;
+            else
+            {
+                if (cap2.capacity == 0)
+                    return true;
+                else
+                    return (cap1 < cap2.capacity);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
         public static bool operator <=(Capacity cap1, Capacity cap2)
         {
             if (cap2.capacity == 0)
@@ -125,6 +163,44 @@ namespace SyndicateNet.Marking
         /// <param name="cap1"></param>
         /// <param name="cap2"></param>
         /// <returns></returns>
+        public static bool operator >(long cap1, Capacity cap2)
+        {
+            if (cap2.capacity == 0)
+                return false;
+            else
+            {
+                if (cap1 == 0)
+                    return true;
+                else
+                    return (cap1 > cap2.capacity);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator >(Capacity cap1, long cap2)
+        {
+            if (cap2 == 0)
+                return false;
+            else
+            {
+                if (cap1.capacity == 0)
+                    return true;
+                else
+                    return (cap1.capacity > cap2);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
         public static bool operator >=(Capacity cap1, Capacity cap2)
         {
             if (cap1.capacity == 0)
@@ -136,6 +212,72 @@ namespace SyndicateNet.Marking
                 else
                     return (cap1.capacity >= cap2.capacity);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator !=(Capacity cap1, Capacity cap2)
+        {
+            return (cap1.capacity != cap2.capacity);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator !=(long cap1, Capacity cap2)
+        {
+            return (cap1 != cap2.capacity);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator !=(Capacity cap1, long cap2)
+        {
+            return (cap1.capacity != cap2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Capacity cap1, Capacity cap2)
+        {
+            return (cap1.capacity == cap2.capacity);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator ==(long cap1, Capacity cap2)
+        {
+            return (cap1 == cap2.capacity);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cap1"></param>
+        /// <param name="cap2"></param>
+        /// <returns></returns>
+        public static bool operator ==(Capacity cap1, long cap2)
+        {
+            return (cap1.capacity == cap2);
         }
         #endregion
     }

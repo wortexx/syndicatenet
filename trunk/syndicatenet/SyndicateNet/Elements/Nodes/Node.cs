@@ -117,6 +117,15 @@ namespace SyndicateNet.Elements.Nodes
         }
         #endregion
 
+        #region Constructors
+        public Node(Systems.NetSystem housingSystem)
+            : base(housingSystem)
+        {
+            if (observable || controllable)
+                housingSystem.AddElement(this);
+        }
+        #endregion
+
         #region Public Methods
         /// <summary>
         /// 

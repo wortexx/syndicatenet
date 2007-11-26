@@ -43,6 +43,13 @@ namespace SyndicateNet.Elements
         private long elementID;
         #endregion
 
+        #region Protected Members
+        /// <summary>
+        /// 
+        /// </summary>
+        protected Systems.NetSystem housingSystem = null;
+        #endregion
+
         #region Accessors
         /// <summary>
         /// 
@@ -57,6 +64,26 @@ namespace SyndicateNet.Elements
             {
                 elementID = value;
             }
+        }
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// 
+        /// </summary>
+        public Element()
+        {
+            housingSystem = null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hSystem"></param>
+        public Element(Systems.NetSystem hSystem)
+        {
+            housingSystem = hSystem;
+            ElementID = housingSystem.AddElement(this);
         }
         #endregion
 

@@ -117,6 +117,13 @@ namespace SyndicateNet.Elements.Systems
             includedElements.Remove(oldElement);
             elementIDMaker.FreeID(oldElement.ElementID);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual void SystemChanged()
+        {
+        }
         #endregion
     }
 }

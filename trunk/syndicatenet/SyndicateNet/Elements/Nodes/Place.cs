@@ -35,5 +35,164 @@ namespace SyndicateNet.Elements.Nodes
     /// </summary>
     class Place : Node
     {
+        #region Protected Members
+        /// <summary>
+        /// 
+        /// </summary>
+        protected Marking.Capacity capacity = new SyndicateNet.Marking.Capacity();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected long placeID;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected long markingPlaceID;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected long marking;
+        #endregion
+
+        #region Accessors
+        /// <summary>
+        /// 
+        /// </summary>
+        public Marking.Capacity Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long MarkingPlaceID
+        {
+            get
+            {
+                return markingPlaceID;
+            }
+            set
+            {
+                markingPlaceID = value;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long Marking
+        {
+            get
+            {
+                return marking;
+            }
+            set
+            {
+                marking = value;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long PlaceID
+        {
+            get
+            {
+                return placeID;
+            }
+        }
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="housingSystem"></param>
+        public Place(Systems.PlaceTransitionNet housingSystem)
+            : base((Systems.NetSystem)housingSystem)
+        {
+            Type = Nodes.Node.NodeType.PLACE;
+            Marking = 0;
+            Capacity = new Marking.Capacity(1);
+            placeID = housingSystem.AddElement(this);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="housingSystem"></param>
+        /// <param name="cap"></param>
+        public Place(Systems.PlaceTransitionNet housingSystem, Marking.Capacity cap)
+            : base((Systems.NetSystem)housingSystem)
+        {
+            Type = Nodes.Node.NodeType.PLACE;
+            Marking = 0;
+            Capacity = cap;
+            placeID = housingSystem.AddElement(this);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="housingSystem"></param>
+        /// <param name="cap"></param>
+        public Place(Systems.PlaceTransitionNet housingSystem, long cap)
+            : base((Systems.NetSystem)housingSystem)
+        {
+            Type = Nodes.Node.NodeType.PLACE;
+            Marking = 0;
+            Capacity = new Marking.Capacity(cap);
+            placeID = housingSystem.AddElement(this);
+        }
+        #endregion
+
+        #region Public Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dMarking"></param>
+        public void AddToMarking(long dMarking)
+        {
+            if (Marking + dMarking > Capacity)
+            {
+                throw new System.Exception();
+            }
+            Marking += dMarking;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dMarking"></param>
+        public void SubFromMarking(long dMarking)
+        {
+            if (Marking >= dMarking)
+                Marking -= dMarking;
+            else
+                Marking = 0;
+        }
+        #endregion
+
+        #region Public Overloaded Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void Draw()
+        {
+            base.Draw();
+        }
+        #endregion
     }
 }
