@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// Copyright (c) 2007-2008 Simon Wollwage
+/// Copyright (c) 2007-2008 Simon Wollwage, Johannes Rössel
 /// 
 /// Permission is hereby granted, free of charge, to any person
 /// obtaining a copy of this software and associated documentation
@@ -87,6 +87,23 @@ namespace SyndicateNet.Elements.Arcs
             {
                 return arcID;
             }
+        }
+        #endregion
+
+        #region Constructors
+        public Arc(Nodes.Node fromNode, Nodes.Node toNode, Systems.PlaceTransitionNet housingSystem)
+            : base()
+        {
+            SortNodes();
+
+            if (!IsAllowed())
+            {
+                throw new System.Exception("Arc " + arcID + " not allowed!");
+            }
+
+            fromNode.AddArc(this);
+            toNode.AddArc(this);
+            arcID = housingSystem.AddElement(this);
         }
         #endregion
 

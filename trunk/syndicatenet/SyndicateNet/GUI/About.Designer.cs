@@ -110,7 +110,7 @@
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(271, 16);
             this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "Copyright: ScienceAndCode.org, Simon Wollwage";
+            this.labelCopyright.Text = "Copyright: ScienceAndCode.org, Simon Wollwage, Johannes Rössel";
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCompanyName

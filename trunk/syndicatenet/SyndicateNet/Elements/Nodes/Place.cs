@@ -28,52 +28,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SyndicateNet.Elements.Systems
+namespace SyndicateNet.Elements.Nodes
 {
     /// <summary>
     /// 
     /// </summary>
-    [Serializable]
-    class SystemState
+    class Place : Node
     {
-        #region Protected Members
-        /// <summary>
-        /// 
-        /// </summary>
-        protected Systems.NetSystem relatedSystem = null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        protected double relatedSystemVersion = 0.0;
-        #endregion
-
-        #region Constructors
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="relatedSystem">
-        /// </param>
-        public SystemState(NetSystem relatedSystem)
-        {
-            this.relatedSystem = relatedSystem;
-            this.relatedSystemVersion = relatedSystem.SystemVersion;
-        }
-        #endregion
-
-        #region Public Methods
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="relatedSystem">
-        /// </param>
-        /// <returns>
-        /// </returns>
-        public bool IsCompatible(Systems.NetSystem relatedSystem)
-        {
-            return ((relatedSystemVersion == relatedSystem.SystemVersion) &&
-                (this.relatedSystem == relatedSystem));
-        }
-        #endregion
     }
 }

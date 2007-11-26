@@ -64,9 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Elements\Arcs\Arc.cs" />
+    <Compile Include="Elements\Arcs\EventArc.cs" />
     <Compile Include="Elements\Element.cs" />
     <Compile Include="Elements\IDDistributor.cs" />
-    <Compile Include="Elements\NetMarking.cs" />
+    <Compile Include="Elements\Nodes\Place.cs" />
+    <Compile Include="Elements\Nodes\Transition.cs" />
+    <Compile Include="Elements\Systems\PlaceTransitionNet.cs" />
+    <Compile Include="Marking\Capacity.cs" />
+    <Compile Include="Marking\NetMarking.cs" />
     <Compile Include="Elements\Nodes\Node.cs" />
     <Compile Include="Elements\Systems\SystemState.cs" />
     <Compile Include="GUI\About.cs">

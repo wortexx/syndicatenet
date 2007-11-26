@@ -1,5 +1,5 @@
 ﻿/// <license>
-/// Copyright (c) 2007-2008 Simon Wollwage
+/// Copyright (c) 2007-2008 Simon Wollwage, Johannes Rössel
 /// 
 /// Permission is hereby granted, free of charge, to any person
 /// obtaining a copy of this software and associated documentation
