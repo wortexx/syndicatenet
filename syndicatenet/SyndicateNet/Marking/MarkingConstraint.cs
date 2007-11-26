@@ -28,20 +28,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SyndicateNet.Elements.Nodes
+namespace SyndicateNet.Marking
 {
     /// <summary>
     /// 
     /// </summary>
-    class Transition : Node
+    class MarkingConstraint
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="housingSystem"></param>
-        public Transition(Systems.NetSystem housingSystem)
-            : base(housingSystem)
-        {
-        }
+
     }
 }

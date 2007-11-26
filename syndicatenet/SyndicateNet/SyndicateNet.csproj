@@ -71,6 +71,7 @@
     <Compile Include="Elements\Nodes\Transition.cs" />
     <Compile Include="Elements\Systems\PlaceTransitionNet.cs" />
     <Compile Include="Marking\Capacity.cs" />
+    <Compile Include="Marking\MarkingConstraint.cs" />
     <Compile Include="Marking\NetMarking.cs" />
     <Compile Include="Elements\Nodes\Node.cs" />
     <Compile Include="Elements\Systems\SystemState.cs" />
@@ -105,6 +106,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
