@@ -126,5 +126,55 @@ namespace SyndicateNet.Elements.Systems
             throw new NotImplementedException();
         }
         #endregion
+
+        #region Public Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nPlace"></param>
+        /// <returns></returns>
+        public long AddPlace(Nodes.Place nPlace)
+        {
+            places.Add(nPlace);
+            RenumberPlaces();
+            return placeIDMaker.NewID;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Nodes.Place AddNewPlace()
+        {
+            Nodes.Place p = new SyndicateNet.Elements.Nodes.Place(this);
+            return p;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public Nodes.Place GetPlaceByMarkingID(long ID)
+        {
+            if (!IDPlaceMap.ContainsKey(ID))
+            {
+                throw new System.Exception("ID " + ID + " not in Map!");
+            }
+
+            return IDPlaceMap[ID];
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="oldPlace"></param>
+        public void RemovePlace(Nodes.Place oldPlace)
+        {
+            places.Remove(oldPlace);
+            placeIDMaker.FreeID(oldPlace.PlaceID);
+            RenumberPlaces();
+        }
+        #endregion
     }
 }
