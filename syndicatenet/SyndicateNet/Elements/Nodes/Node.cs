@@ -104,6 +104,17 @@ namespace SyndicateNet.Elements.Nodes
                 return controllable;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<Elements.Arcs.Arc> IncidentArcs
+        {
+            get
+            {
+                return incidentArcs;
+            }
+        }
         #endregion
 
         #region Public Methods

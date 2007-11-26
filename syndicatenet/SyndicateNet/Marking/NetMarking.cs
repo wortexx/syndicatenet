@@ -25,66 +25,67 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace SyndicateNet.Elements
+namespace SyndicateNet.Marking
 {
     /// <summary>
     /// 
     /// </summary>
     [Serializable]
-    class IDDistributor
+    class NetMarking : SyndicateNet.Elements.Systems.SystemState
     {
         #region Private Members
         /// <summary>
         /// 
         /// </summary>
-        private List<long> recycled
+        private List<long> markingVector
             = new List<long>();
 
         /// <summary>
         /// 
         /// </summary>
-        private long firstFreeID = 0;
+        private long numberOfPlaces;
         #endregion
 
-        #region Accessors
+        #region Contructors
         /// <summary>
         /// 
         /// </summary>
-        /// <returns>The new ID</returns>
-        public long NewID
+        /// <param name="relatedSystem"></param>
+        public NetMarking(SyndicateNet.Elements.Systems.NetSystem relatedSystem)
+            : base(relatedSystem)
         {
-            get
-            {
-                long newID;
-                if (recycled.Count == 0)
-                    newID = firstFreeID++;
-                else
-                {
-                    newID = recycled[0];
-                    recycled.RemoveAt(0);
-                }
-
-                return newID;
-            }
         }
         #endregion
 
-        #region Public Methods
+        #region Private Methods
         /// <summary>
-        ///     
+        /// 
         /// </summary>
-        /// <param name="id">
-        ///     The ID to remove
-        /// </param>
-        public void FreeID(long id)
+        private void Dest()
         {
-            if (id >= firstFreeID)
-            {
-                throw new System.Exception("ID not allocated and thus can not be freed");
-            }
+        }
 
-            recycled.Add(id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="marking">
+        ///     The marking to copy from
+        /// </param>
+        private void Copy(NetMarking marking)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="marking">
+        ///     The marking to check
+        /// </param>
+        private void CheckNetMarking(NetMarking marking)
+        {
         }
         #endregion
     }
