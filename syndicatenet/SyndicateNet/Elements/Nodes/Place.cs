@@ -126,7 +126,7 @@ namespace SyndicateNet.Elements.Nodes
             Type = Nodes.Node.NodeType.PLACE;
             Marking = 0;
             Capacity = new Marking.Capacity(1);
-            placeID = housingSystem.AddElement(this);
+            placeID = housingSystem.AddPlace(this);
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace SyndicateNet.Elements.Nodes
             Type = Nodes.Node.NodeType.PLACE;
             Marking = 0;
             Capacity = cap;
-            placeID = housingSystem.AddElement(this);
+            placeID = housingSystem.AddPlace(this);
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace SyndicateNet.Elements.Nodes
             Type = Nodes.Node.NodeType.PLACE;
             Marking = 0;
             Capacity = new Marking.Capacity(cap);
-            placeID = housingSystem.AddElement(this);
+            placeID = housingSystem.AddPlace(this);
         }
         #endregion
 
