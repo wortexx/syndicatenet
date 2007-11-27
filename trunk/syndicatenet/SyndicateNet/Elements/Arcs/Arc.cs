@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace SyndicateNet.Elements.Arcs
 {
@@ -157,7 +158,7 @@ namespace SyndicateNet.Elements.Arcs
         /// <summary>
         /// 
         /// </summary>
-        public override void Draw()
+        public override void Draw(Graphics g)
         {
             throw new NotImplementedException();
         }
