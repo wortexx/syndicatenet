@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace SyndicateNet.Elements
 {
@@ -91,7 +92,7 @@ namespace SyndicateNet.Elements
         /// <summary>
         /// 
         /// </summary>
-        public abstract void Draw();
+        public abstract void Draw(Graphics g);
         #endregion
     }
 }

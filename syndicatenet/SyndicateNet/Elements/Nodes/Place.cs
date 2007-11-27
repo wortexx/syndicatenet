@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace SyndicateNet.Elements.Nodes
 {
@@ -189,9 +190,9 @@ namespace SyndicateNet.Elements.Nodes
         /// <summary>
         /// 
         /// </summary>
-        public override void Draw()
+        public override void Draw(Graphics g)
         {
-            base.Draw();
+            base.Draw(g);
         }
         #endregion
     }
